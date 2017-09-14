@@ -20,4 +20,5 @@ golang.org/pkg
 
 func main() {
 	fmt.Println("Hi there!")
+	printState()
 }
