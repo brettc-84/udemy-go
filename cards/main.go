@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// var card string = "Ace of spades"
 	// card := "Ace of spades" // type string is inferred by assignment
@@ -11,9 +13,9 @@ func main() {
 	// slice
 	cards := newDeck()
 
-	hand, remainingCards := deal(cards, 5)
+	// hand, remainingCards := deal(cards, 5)
 
-	hand.print()
-	remainingCards.print()
-
+	// hand.print()
+	// remainingCards.print()
+	fmt.Println(cards.toString())
 }
