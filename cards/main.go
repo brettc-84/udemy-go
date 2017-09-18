@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var card string = "Ace of spades"
 	// card := "Ace of spades" // type string is inferred by assignment
@@ -17,5 +15,5 @@ func main() {
 
 	// hand.print()
 	// remainingCards.print()
-	fmt.Println(cards.toString())
+	cards.saveToFile("my_cards")
 }
