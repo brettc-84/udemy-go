@@ -15,5 +15,10 @@ func main() {
 
 	// hand.print()
 	// remainingCards.print()
-	cards.saveToFile("my_cards")
+	// cards.saveToFile("my_cards")
+
+	// read from file
+	// cards := newDeckFromFile("my_cards")
+	cards.shuffle()
+	cards.print()
 }
