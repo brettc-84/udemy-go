@@ -11,12 +11,28 @@ type person struct {
 	firstName string
 	lastName  string
 	age       int
-	contact   contactInfo
+	contactInfo
+}
+
+func (p person) print() {
+	fmt.Printf("%+v\n", p)
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }
 
 func main() {
 	alex := person{"Alex", "Anderson", 32, contactInfo{"alex.a@gmail.com", 1234}}
-	tony := person{firstName: "Tony", lastName: "Sly", age: 41, contact: contactInfo{email: "tony@sly.com", zipcode: 91021}}
+	tony := person{
+		firstName: "Tony",
+		lastName:  "Sly",
+		age:       41,
+		contactInfo: contactInfo{
+			email:   "tony@sly.com",
+			zipcode: 91021,
+		},
+	}
 	var dexter person
 
 	dexter.firstName = "Dexter"
@@ -24,5 +40,8 @@ func main() {
 
 	fmt.Println(alex, tony, dexter)
 
-	fmt.Printf("%+v\n", alex)
+	alex.updateName("Alexander")
+
+	alex.print()
+
 }
