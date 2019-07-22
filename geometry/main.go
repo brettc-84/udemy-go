@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 type shape interface {
@@ -10,24 +9,22 @@ type shape interface {
 }
 
 type triangle struct {
-	a float64
-	b float64
-	c float64
+	height float64
+	base   float64
 }
 type square struct {
-	a float64
+	sideLength float64
 }
 
 func main() {
 	sq := square{
-		a: 4,
+		sideLength: 4,
 	}
 	printArea(sq)
 
 	tr := triangle{
-		a: 3,
-		b: 3,
-		c: 3,
+		height: 5,
+		base:   5.6,
 	}
 	printArea(tr)
 }
@@ -37,11 +34,9 @@ func printArea(s shape) {
 }
 
 func (t triangle) getArea() float64 {
-	// heron's algorithm
-	s := (t.a + t.b + t.c) / 2
-	return math.Sqrt(s * (s - t.a) * (s - t.b) * (s - t.c))
+	return (t.base * t.height) / 2
 }
 
 func (s square) getArea() float64 {
-	return s.a * s.a
+	return s.sideLength * s.sideLength
 }
