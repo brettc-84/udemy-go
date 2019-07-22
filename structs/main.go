@@ -52,4 +52,7 @@ func main() {
 	alexPtr.updateNameReference("Alexander")
 	alex.print()
 
+	tony.updateNameReference("Anthony")
+	tony.print()
+
 }
