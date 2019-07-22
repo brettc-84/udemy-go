@@ -18,8 +18,13 @@ func (p person) print() {
 	fmt.Printf("%+v\n", p)
 }
 
+// passed by value
 func (p person) updateName(newFirstName string) {
 	p.firstName = newFirstName
+}
+
+func (p *person) updateNameReference(newFirstName string) {
+	(*p).firstName = newFirstName
 }
 
 func main() {
@@ -41,7 +46,10 @@ func main() {
 	fmt.Println(alex, tony, dexter)
 
 	alex.updateName("Alexander")
+	alex.print()
 
+	alexPtr := &alex
+	alexPtr.updateNameReference("Alexander")
 	alex.print()
 
 }
